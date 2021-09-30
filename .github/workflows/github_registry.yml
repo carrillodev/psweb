@@ -55,9 +55,9 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/psweb:latest
-          cache-from: type-local,src=/tmp/.buildx-cache
-          cache-to: type-local,dest=/tmp/.buildx-cache
+          tags: ghcr.io/carrillodev/psweb:latest
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
           
       - name: Image digest
         run: echo ${{ steps.docker.build.outputs.digest }}
