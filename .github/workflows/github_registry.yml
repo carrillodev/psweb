@@ -28,11 +28,11 @@ jobs:
 
       # Setup Buildx
       - id: buildx
-        uses: docker/setup-buildx-actions@v1
+        uses: docker/setup-buildx-action@v1
       
       # Cache layer
       - name: Cache docker layers
-        uses: action/cache@v2
+        uses: actions/cache@v2
         with:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-buildx-${{ github.sha }}
